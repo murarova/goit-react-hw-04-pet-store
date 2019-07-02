@@ -28,6 +28,11 @@ a {
 ul {
     list-style: none;
 }
+button {
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0;
+}
 
 .wrapper {
     padding: 15px;
@@ -40,7 +45,7 @@ ul {
 
 .header {
     padding: 15px;
-    background-color: teal;
+    background-color: rgb(109, 104, 104);
 }
 
 .title {
@@ -91,4 +96,32 @@ ul {
 
 .imgWrapper {
     width: 50%;
+}
+
+.page {
+    margin-top: 20px;
+}
+
+.pageItemInfo {
+    display: flex;
+}
+.pageImgWrapper {
+    width: 25%;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(109, 104, 104);
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.itemInfo {
+    font-weight: bold;
+}
+
+.pageInfoItem {
+    margin-bottom: 10px;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from '../../styles.module.css';
 
@@ -10,5 +11,11 @@ const GalleryItem = ({ name, image, id }) => (
         </Link>
     </div>
 );
+
+GalleryItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+};
 
 export default GalleryItem;

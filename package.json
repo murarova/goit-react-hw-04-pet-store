@@ -21,7 +21,9 @@
         "eject": "react-scripts eject",
         "lint": "eslint src/**/*.js",
         "lint:fix": "eslint src/**/*.js --fix",
-        "lint:format": "prettier src/**/*.{js,css,json} --write"
+        "lint:format": "prettier src/**/*.{js,css,json} --write",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -39,14 +41,15 @@
         ]
     },
     "devDependencies": {
-        "eslint-config-airbnb": "^17.1.1",
+        "eslint-config-airbnb": "^17.1.0",
         "eslint-config-prettier": "^4.3.0",
-        "eslint-plugin-import": "^2.18.0",
-        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-import": "^2.17.3",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
         "eslint-plugin-prettier": "^3.1.0",
-        "eslint-plugin-react": "^7.14.2",
-        "husky": "^2.7.0",
-        "lint-staged": "^8.2.1",
+        "eslint-plugin-react": "^7.13.0",
+        "gh-pages": "^2.0.1",
+        "lint-staged": "^8.2.0",
         "prettier": "^1.18.2"
-    }
+    },
+    "homepage": "https://murarova.github.io/go-react-hw-03/"
 }

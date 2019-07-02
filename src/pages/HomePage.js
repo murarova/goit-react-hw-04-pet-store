@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styles from '../styles.module.css';
 
 const HomePage = () => (
-    <div className={styles.wrapper}>
+    <Fragment>
         <h2 className={styles.title}>Welcome to Pets Shop</h2>
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
@@ -12,7 +12,7 @@ const HomePage = () => (
             fuga commodi odio aperiam distinctio quae voluptas iusto similique
             accusamus sit ipsam laboriosam voluptatum expedita.
         </p>
-    </div>
+    </Fragment>
 );
 
 export default HomePage;

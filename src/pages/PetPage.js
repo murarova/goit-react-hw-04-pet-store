@@ -1,40 +1,49 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
-// import styles from '../styles.module.css';
+import pets from '../pets.json';
+import styles from '../styles.module.css';
+import imageNotFound from '../img/imageNotFound.jpg';
 
-// const PetPage = ({
-//     id,
-//     name,
-//     age,
-//     breed,
-//     gender,
-//     color,
-//     image,
-//     description,
-// }) => (
-//     <div>
-//         <button className={styles.button} type="button">
-//             Return
-//         </button>
-//         <div className={styles.item}>
-//             <div>
-//                 <h2 className={styles.title}> All about {name}</h2>
-//                 <div className={styles.item}>
-//                     <div className={styles.imgWrapper}>
-//                         <img src={image} alt={`pet ${breed}`} />
-//                     </div>
-//                     <div className={styles.itemInfo}>
-//                         <p>Age: {age} </p>
-//                         <p>Gender: {gender} </p>
-//                         <p>Color: {color} </p>
-//                         <p>Breed: {breed} </p>
-//                     </div>
-//                     <p className={styles.desc}>{description}</p>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// );
+const PetPage = props => {
+    const { id } = props.match.params;
+    const pet = pets.find(item => item.id === id);
+    const { name, breed, age, gender, color, description } = pet;
 
-const PetPage = () => <h2>Pet Page</h2>;
+    return (
+        <div className={styles.page}>
+            <button className={styles.button} type="button">
+                ⬅ Return
+            </button>
+            <h2 className={styles.title}> All about {name}</h2>
+            <div className={styles.pageItem}>
+                <div className={styles.pageItemInfo}>
+                    <div className={styles.pageImgWrapper}>
+                        <img src={imageNotFound} alt={`pet ${breed}`} />
+                    </div>
+                    <div className={styles.pageInfo}>
+                        <p className={styles.pageInfoItem}>
+                            <span className={styles.itemInfo}> Age: </span>
+                            {age}
+                        </p>
+                        <p className={styles.pageInfoItem}>
+                            <span className={styles.itemInfo}>Gender:</span>{' '}
+                            {gender}
+                        </p>
+                        <p className={styles.pageInfoItem}>
+                            <span className={styles.itemInfo}>Color:</span>{' '}
+                            {color}
+                        </p>
+                        <p className={styles.pageInfoItem}>
+                            <span className={styles.itemInfo}>Breed:</span>{' '}
+                            {breed}
+                        </p>
+                    </div>
+                </div>
+                <p className={styles.desc}>{description}</p>
+            </div>
+        </div>
+    );
+};
 
 export default PetPage;

@@ -5,16 +5,19 @@ import HomePage from '../../pages/HomePage';
 import PetsPage from '../../pages/PetsPage';
 import PetPage from '../../pages/PetPage';
 import Header from '../Header/Header';
+import styles from '../../styles.module.css';
 
 const App = () => (
     <Fragment>
         <Header />
-        <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/pets/:id" component={PetPage} />
-            <Route path="/pets" component={PetsPage} />
-        </Switch>
+        <div className={styles.wrapper}>
+            <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="/pets/:id" component={PetPage} />
+                <Route path="/pets" component={PetsPage} />
+            </Switch>
+        </div>
     </Fragment>
 );
 
