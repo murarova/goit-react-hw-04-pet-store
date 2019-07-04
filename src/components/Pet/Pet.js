@@ -45,14 +45,25 @@ const Pet = ({
 );
 
 Pet.propTypes = {
-    name: PropTypes.string.isRequired,
-    breed: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired,
-    gender: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    onGoBack: PropTypes.func.isRequired,
+    name: PropTypes.string,
+    breed: PropTypes.string,
+    age: PropTypes.number,
+    gender: PropTypes.string,
+    color: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    onGoBack: PropTypes.func,
+};
+
+Pet.defaultProps = {
+    name: '',
+    breed: '',
+    age: null,
+    gender: '',
+    color: '',
+    description: '',
+    image: '',
+    onGoBack: () => {},
 };
 
 export default Pet;

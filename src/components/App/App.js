@@ -16,6 +16,7 @@ const App = () => (
                 <Route path="/about" component={AboutPage} />
                 <Route path="/pets/:id" component={PetPage} />
                 <Route path="/pets" component={PetsPage} />
+                <Route component={HomePage} />
             </Switch>
         </div>
     </Fragment>
