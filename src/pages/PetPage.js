@@ -1,49 +1,30 @@
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { Component } from 'react';
 import pets from '../pets.json';
-import styles from '../styles.module.css';
-import imageNotFound from '../img/imageNotFound.jpg';
+import Pet from '../components/Pet/Pet';
 
-const PetPage = props => {
-    const { id } = props.match.params;
-    const pet = pets.find(item => item.id === id);
-    const { name, breed, age, gender, color, description } = pet;
+const findPageId = props => props.match.params.id;
+const findPet = id => pets.find(item => item.id === id);
 
-    return (
-        <div className={styles.page}>
-            <button className={styles.button} type="button">
-                ⬅ Return
-            </button>
-            <h2 className={styles.title}> All about {name}</h2>
-            <div className={styles.pageItem}>
-                <div className={styles.pageItemInfo}>
-                    <div className={styles.pageImgWrapper}>
-                        <img src={imageNotFound} alt={`pet ${breed}`} />
-                    </div>
-                    <div className={styles.pageInfo}>
-                        <p className={styles.pageInfoItem}>
-                            <span className={styles.itemInfo}> Age: </span>
-                            {age}
-                        </p>
-                        <p className={styles.pageInfoItem}>
-                            <span className={styles.itemInfo}>Gender:</span>{' '}
-                            {gender}
-                        </p>
-                        <p className={styles.pageInfoItem}>
-                            <span className={styles.itemInfo}>Color:</span>{' '}
-                            {color}
-                        </p>
-                        <p className={styles.pageInfoItem}>
-                            <span className={styles.itemInfo}>Breed:</span>{' '}
-                            {breed}
-                        </p>
-                    </div>
-                </div>
-                <p className={styles.desc}>{description}</p>
-            </div>
-        </div>
-    );
-};
+class PetPage extends Component {
+    state = {
+        pet: null,
+    };
+
+    componentDidMount() {
+        const id = findPageId(this.props);
+        this.setState({ pet: findPet(id) });
+    }
+
+    handleGoBack = () => this.props.history.push('/pets');
+
+    render() {
+        const { pet } = this.state;
+
+        return (
+            <div>{pet && <Pet {...pet} onGoBack={this.handleGoBack} />}</div>
+        );
+    }
+}
 
 export default PetPage;

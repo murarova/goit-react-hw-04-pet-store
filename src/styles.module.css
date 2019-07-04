@@ -74,9 +74,9 @@ button {
 }
 
 .item {
-    width: 30%;
-    margin-right: 5%;
-    margin-bottom: 20px;
+    width: 20%;
+    margin-right: 6.66%;
+    margin-bottom: 25px;
     overflow: hidden;
     border-radius: 2px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -90,7 +90,7 @@ button {
     font-weight: bold;
 }
 
-.item:nth-child(3n) {
+.item:nth-child(4n) {
     margin-right: 0;
 }
 
@@ -106,7 +106,8 @@ button {
     display: flex;
 }
 .pageImgWrapper {
-    width: 25%;
+    width: 200px;
+    margin: 0 20px 20px 0;
 }
 
 .button {

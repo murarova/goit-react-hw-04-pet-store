@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GalleryItem from '../GalleryItem/GalleryItem';
-import imageNotFound from '../../img/imageNotFound.jpg';
+
 import styles from '../../styles.module.css';
 
 const Gallery = ({ items }) => (
@@ -15,7 +15,7 @@ const Gallery = ({ items }) => (
                 breed={item.breed}
                 gender={item.gender}
                 color={item.color}
-                image={imageNotFound}
+                image={item.image}
                 description={item.description}
             />
         ))}
